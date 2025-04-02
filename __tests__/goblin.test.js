@@ -2,8 +2,7 @@
  • @jest-environment jsdom
  */
 
-
-import createGoblin from '../src/js/goblin'; 
+import createGoblin from '../src/js/goblin';
 
 describe('Goblin', () => {
   test('should create a goblin element', () => {
