@@ -1,28 +1,15 @@
-version: '{build}'
-image: Windows Server 2022
+    version: '{build}'
+    image: Visual Studio 2022
 
-environment:
-  nodejs_version: '16'  
+    environment:
+      nodejs_version: '18'
 
-install:
-  - ps: Install-Product node $env:nodejs_version
-  - npm install  
+    install:
+      - ps: Install-Product node $env:nodejs_version
+      - npm install
 
-build_script:
-  - npm run build 
-deploy_script:
-  - git config --global user.email "appveyor@example.com"
-  - git config --global user.name "Appveyor"
-  - git clone -b gh-pages --depth 1 --single-branch https://github.com/%APPVEYOR_REPO_NAME% gh-pages
-  - cd gh-pages
-  - rm -rf *
-  - cd ..
-  - mkdir gh-pages/dist 
-  - xcopy /s /y dist\* gh-pages/dist\
-  - cd gh-pages
-  - git add --all
-  - git commit -m "Deploy to GitHub Pages"
-  - git push origin gh-pages
+    build_script:
+      - npm run lint
+      - npm test
 
-on_success:
-  - ps: Write-Host "Развертывание на GitHub Pages успешно!"
+    test: off 
