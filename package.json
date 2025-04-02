@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/FilSado/ahj-dom-game/issues"
   },
-  "homepage": "https://FilSado.github.io/ahj-dom-game/",
+  "homepage": "https://filsado.github.io/ahj-dom-game/",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
